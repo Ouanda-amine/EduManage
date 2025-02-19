@@ -16,11 +16,8 @@
 <h1 style="text-align: center"> Welcome to Edu-Management </h1>
 <h2 style="text-align: center">  pour une bonne gestion des Etudiants et des cours</h2>
 <form>
-  <div class="form-group" >
 
-  </div>
-  <input type="button" class="btn btn-primary" value="ajouter un Etudiant" >
-  <input type="button" class="btn btn-primary" value="ajouter un cours" >
+
 
 </form>
 </body>

@@ -1,11 +1,15 @@
 package org.example.edumanage.bean;
 
+import java.util.List;
+
 public class Student {
     private int id;
     private String name;
     private String prenom;
     private String email;
     private String dateNaissance;
+
+    private List<Cours> courss;
 
     public Student() {}
     public Student( String name, String prenom, String email, String dateNaissance) {
