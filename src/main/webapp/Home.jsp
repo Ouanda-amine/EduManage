@@ -9,7 +9,7 @@
 </head>
 <body class="bg-light">
 
-<!-- Navbar -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand" href="#">Edu-Management</a>
@@ -46,6 +46,6 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF9CCAsW0b/eEOEp4wtI2lY9uHlr7MZ5z5l5h5gAdJYy7ZoW5h8" crossorigin="anonymous"></script>
+
 </body>
 </html>
