@@ -33,11 +33,9 @@
             <td><%= student.getEmail() %></td>
             <td><%= student.getDateNaissance() %></td>
             <td>
-                <a href="modifieremployee?id=<%= student.getId() %>" class="btn btn-warning btn-sm">Edit</a>
-                <form action="deleteEmployee" method="post" style="display:inline;">
-                    <input type="hidden" name="id" value="<%= student.getId() %>" />
-                    <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
-                </form>
+                <a href="StudentServlet?action=edit&id=<%= student.getId() %>" class="btn btn-warning btn-sm">Edit</a>
+                <a href="StudentServlet?action=delete&id=<%= student.getId() %>" class="btn btn-danger btn-sm">Delete</a>
+
             </td>
         </tr>
         <%
@@ -47,7 +45,7 @@
         </tbody>
     </table>
 
-    <a href="createmployee" class="btn btn-success">Add new Employee</a>
+    <a href="StudentForm.jsp" class="btn btn-success">Add new Employee</a>
 </div>
 
 </body>
