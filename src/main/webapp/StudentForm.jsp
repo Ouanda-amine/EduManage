@@ -26,21 +26,21 @@
                        <div class="mb-3">
                            <label for="nom" class="form-label">Nom</label>
                            <input type="text" class="form-control" id="nom" name="nom">
-                       </div>
-                       <div class="mb-3">
-                           <label for="prenom" class="form-label">Age</label>
-                           <input type="text" class="form-control" id="prenom" name="prenom">
-                       </div>
-                       <div class="mb-3">
-                           <label for="email" class="form-label">Email</label>
-                           <input type="email" class="form-control" id="email" name="email">
-                       </div>
+                             </div>
+                                  <div class="mb-3">
+                                    <label for="prenom" class="form-label">Age</label>
+                                      <input type="text" class="form-control" id="prenom" name="prenom">
+                                  </div>
+                                         <div class="mb-3">
+                                             <label for="email" class="form-label">Email</label>
+                                                 <input type="email" class="form-control" id="email" name="email">
+                                        </div>
                        <div class="mb-3">
                            <label for="dateNaissance" class="form-label">Date de Naissance</label>
-                           <input type="date" class="form-control" id="dateNaissance" name="dateNaissance">
+                           <input type="text" class="form-control" id="dateNaissance" name="dateNaissance">
                        </div>
                        <div class="mb-3">
-                           <button type="submit" class="btn btn-primary">Ajouter</button>
+                           <button type="submit" class="btn btn-primary" onclick="window.location.href='StudentList.jsp'">Ajouter</button>
                        </div>
                    </form>
                 </div>
