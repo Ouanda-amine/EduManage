@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">Edu-Management</a>
+    <a class="navbar-brand" href="#"> Edu-Management</a>
   </div>
 </nav>
 

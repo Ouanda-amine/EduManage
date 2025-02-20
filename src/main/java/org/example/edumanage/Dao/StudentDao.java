@@ -13,7 +13,7 @@ public class StudentDao {
     public StudentDao() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/students","root","");
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/Management","root","");
             System.out.println("Connected to the database successfully");
 
         } catch (Exception e) {
@@ -22,7 +22,7 @@ public class StudentDao {
         }
     }
     public void CreateStudent(Student student) {
-        String sql = "insert into students(name , prenom , email , dateNaissance) values(?,?,?,?)";
+        String sql = "insert into students(nom , prenom , email , dateNaissance) values(?,?,?,?)";
         try (PreparedStatement preparedStatement = conn.prepareStatement(sql)){
             preparedStatement.setString(1,student.getName());
             preparedStatement.setString(2,student.getPrenom());
@@ -36,6 +36,7 @@ public class StudentDao {
     public List<Student> getallStudents() {
         List<Student> studentlist = new ArrayList<>();
         String sql="SELECT * FROM students";
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxx");
         try(Statement stmt = conn.createStatement(); ResultSet res = stmt.executeQuery(sql)) {
             System.out.println("ww");
             while (res.next()) {
@@ -58,7 +59,7 @@ public class StudentDao {
     }
     public Student getStudBYid(int id) {
         Student student = null;
-        String sql="SELECT * FROM students WHERE id = ?";
+        String sql="SELECT * FROM students WHERE idStudent = ?";
         try(PreparedStatement prest = conn.prepareStatement(sql)) {
             prest.setInt(1, id);
             try (ResultSet res = prest.executeQuery()){
@@ -84,7 +85,7 @@ public class StudentDao {
 
     public void modifierstudent(Student student) {
         System.out.println("nnn");
-        String query = "UPDATE students SET nom = ?, prenom = ? , email = ? , dateNaissance = ? WHERE id = ?";
+        String query = "UPDATE students SET nom = ?, prenom = ? , email = ? , dateNaissance = ? WHERE idStudent = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, student.getName());
             stmt.setString(2, student.getPrenom());
@@ -99,7 +100,7 @@ public class StudentDao {
     }
 
     public  void deleteStudent(int id) {
-        String sql = "DELETE FROM students WHERE id = ?";
+        String sql = "DELETE FROM students WHERE idStudent = ?";
         try (PreparedStatement pres = conn.prepareStatement(sql)){
             pres.setInt(1,id);
             pres.executeUpdate();
