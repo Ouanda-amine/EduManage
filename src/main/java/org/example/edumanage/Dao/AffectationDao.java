@@ -55,7 +55,7 @@ public class AffectationDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Failed to get courses by student ID");
+            System.out.println("Faileddd");
         }
         return coursList;
     }

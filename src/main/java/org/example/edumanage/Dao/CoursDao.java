@@ -25,6 +25,7 @@ public class CoursDao {
         try (PreparedStatement pr = con.prepareStatement(sql)){
             pr.setString(1,cours.getCoursname());
             pr.setString(2,cours.getDescription());
+
             pr.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,7 +36,6 @@ public class CoursDao {
         List<Cours> coursList = new ArrayList<>();
         String sql="SELECT * FROM courses";
         try(Statement stmt = con.createStatement(); ResultSet res = stmt.executeQuery(sql)) {
-            System.out.println("sssssssss");
             while (res.next()) {
                 Cours cours = new Cours();
                 cours.setIdcours(res.getInt("id_cours"));
