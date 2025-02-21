@@ -35,6 +35,8 @@
             <td>
                 <a href="StudentServlet?action=edit&id=<%= student.getId() %>" class="btn btn-warning btn-sm">Edit</a>
                 <a href="StudentServlet?action=delete&id=<%= student.getId() %>" class="btn btn-danger btn-sm">Delete</a>
+                <a href="affectationServlet?id=<%= student.getId() %>" class="btn  btn-primary">Assigner cours</a>
+
 
             </td>
         </tr>
@@ -45,7 +47,7 @@
         </tbody>
     </table>
 
-    <a href="StudentForm.jsp" class="btn btn-success">Add new Employee</a>
+    <a href="StudentForm.jsp" class="btn btn-success">Add new Student</a>
 </div>
 
 </body>

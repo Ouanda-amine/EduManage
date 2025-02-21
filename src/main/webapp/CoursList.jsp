@@ -46,6 +46,7 @@
                 <a href="CoursServlet?action=delete&idcours=<%= cours.getIdcours() %>" class="btn btn-danger btn-sm">Delete</a>
 
 
+
             </td>
         </tr>
         <%

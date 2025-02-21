@@ -14,6 +14,12 @@ public class Cours {
         this.description = description;
     }
 
+    public Cours(int idCours, String nomCours, String description) {
+        this.idcours = idCours;
+        this.coursname = nomCours;
+        this.description = description;
+    }
+
     public int getIdcours() {
         return idcours;
     }
