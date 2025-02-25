@@ -35,12 +35,10 @@
             <td>
                 <a href="StudentServlet?action=edit&id=<%= student.getId() %>" class="btn btn-warning btn-sm">Edit</a>
                 <a href="StudentServlet?action=delete&id=<%= student.getId() %>" class="btn btn-danger btn-sm">Delete</a>
-                <a href="affectationServlet?id=<%= student.getId() %>" class="btn  btn-primary">Assigner cours</a>
-                <form action="affectationServlet" method="post">
-                    <input type="hidden" name="act" value="">
-                  <a href="affectationServlet?id=<%= student.getId() %>" class="btn  btn-primary">afficher les cours</a>
+                  <a href="affectationServlet?id=<%= student.getId() %>" class="btn  btn-primary">Assigner cours</a>
+                  <a href="affectationServlet?act=affectation&id=<%= student.getId() %>" class="btn  btn-primary">list cours</a>
 
-              </form>
+
 
 
             </td>

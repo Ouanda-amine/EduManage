@@ -26,6 +26,7 @@ public class AffectationDao {
         try (PreparedStatement pr = connexion.prepareStatement(sql)) {
             pr.setInt(1, studentId);
             pr.setInt(2, courseId);
+            System.out.println("kkkk");
             pr.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -34,6 +35,7 @@ public class AffectationDao {
     }
 
     public List<Cours> getCoursesByStudentId(int studentId) {
+        System.out.println("vvvvvvvvvvvv");
         List<Cours> coursList = new ArrayList<>();
         String sql = "SELECT c.id_cours, c.nom_cours, c.description " +
                 "FROM courses c " +
@@ -42,9 +44,11 @@ public class AffectationDao {
 
         try (PreparedStatement pr = connexion.prepareStatement(sql)) {
             pr.setInt(1, studentId);
+            System.out.println("dsdsdsds");
 
             try (ResultSet rs = pr.executeQuery()) {
                 while (rs.next()) {
+                    System.out.println("eeeeee");
                     int idCours = rs.getInt("id_cours");
                     String nomCours = rs.getString("nom_cours");
                     String description = rs.getString("description");
@@ -57,6 +61,7 @@ public class AffectationDao {
             e.printStackTrace();
             System.out.println("Faileddd");
         }
+        System.out.println("liiist");
         return coursList;
     }
 

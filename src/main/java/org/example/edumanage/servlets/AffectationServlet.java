@@ -27,6 +27,15 @@ public class AffectationServlet extends HttpServlet {
         affectationDao = new AffectationDao();
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String act = request.getParameter("act");
+        if("affectation".equals(act)){
+            int id = Integer.parseInt(request.getParameter("id"));
+            AffectationDao affectationDao = new AffectationDao();
+            List<Cours> courslist = affectationDao.getCoursesByStudentId(id);
+            request.setAttribute("courslist", courslist);
+            request.getRequestDispatcher("CoursOFstudent.jsp").forward(request, response);
+        }else{
+
         int id = Integer.parseInt(request.getParameter("id"));
         Student student = stdao.getStudBYid(id);
         request.setAttribute("student", student);
@@ -35,14 +44,18 @@ public class AffectationServlet extends HttpServlet {
         request.setAttribute("courslist", coursList);
         request.getRequestDispatcher("Assigner.jsp").forward(request, response);
 
+        }
+
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("////////////////////////");
+
         int studentId = Integer.parseInt(request.getParameter("studdiid"));
         int courseId = Integer.parseInt(request.getParameter("select"));
 
         affectationDao.assignCourseToStudent(studentId, courseId);
-        response.sendRedirect(request.getContextPath() + "/affectationServlet");
+        response.sendRedirect(request.getContextPath() + "/StudentServlet");
 
 
 

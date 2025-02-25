@@ -15,6 +15,8 @@
 %>
 <form action="affectationServlet" method="post">
     <input type="hidden" name="studdiid" value="<%= student.getId() %>">
+    <input type="hidden" name="act" value="affectation">
+
 
     <div class="form-group">
         <label for="select">Cours :</label>
@@ -30,7 +32,7 @@
             %>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">Assigner Cours</button>
+    <button type="submit" class="btn btn-primary">Assigner</button>
 </form>
 </body>
 </html>
