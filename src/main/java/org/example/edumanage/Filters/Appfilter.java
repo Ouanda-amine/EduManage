@@ -27,6 +27,7 @@ public class Appfilter implements Filter {
         HttpSession session = httprequest.getSession(false);
 
         String loginuri = httprequest.getContextPath() + "/login";
+        String loginpage = httprequest.getContextPath() + "/login.jsp";
 
     }
 
