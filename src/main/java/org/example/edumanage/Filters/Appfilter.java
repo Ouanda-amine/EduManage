@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-
 @WebFilter("/*")
 
 public class Appfilter implements Filter {
@@ -24,10 +23,21 @@ public class Appfilter implements Filter {
         HttpServletRequest httprequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpresponse = (HttpServletResponse) servletResponse;
 
-        HttpSession session = httprequest.getSession(false);
+        String uri = httprequest.getRequestURI();
+        if (uri.endsWith("login")) {
 
-        String loginuri = httprequest.getContextPath() + "/login";
-        String loginpage = httprequest.getContextPath() + "/login.jsp";
+            filterChain.doFilter(servletRequest, servletResponse);
+            return;
+
+        }
+
+        if (httprequest.getSession().getAttribute("user") == null) {
+            httpresponse.sendRedirect(httprequest.getContextPath() + "/login");
+            return;
+        }
+        filterChain.doFilter(servletRequest, servletResponse);
+
+
 
     }
 

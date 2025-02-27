@@ -11,12 +11,16 @@ import org.example.edumanage.bean.Cours;
 import java.io.IOException;
 import java.util.List;
 
+
 @WebServlet("/CoursServlet")
 public class CoursServlet extends HttpServlet {
-    private CoursDao coursDao = new CoursDao();
+     CoursDao coursDao = new CoursDao();
+
+
+
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
         String action = request.getParameter("action");
         if("edit".equals(action)) {
             int id = Integer.parseInt(request.getParameter("idcours"));
