@@ -14,7 +14,7 @@
 <div class="container my-5">
     <div class="card-body">
         <h2 class="card-title text-center mb-4">Connect to your Account</h2>
-        <form>
+        <form action="LoginServlet" method="post">
             <label for="username" class="form-label">User Name</label>
             <input type="text" class="form-control" id="username" name="username">
             <label for="password" class="form-label">PassWord</label>
