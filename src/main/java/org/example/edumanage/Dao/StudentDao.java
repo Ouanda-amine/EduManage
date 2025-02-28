@@ -106,6 +106,7 @@ public class StudentDao {
             pres.executeUpdate();
 
         } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("student not founddd");
         }
     }

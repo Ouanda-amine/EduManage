@@ -15,7 +15,7 @@ public class UserDao {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             connn= DriverManager.getConnection("jdbc:mysql://localhost:3306/Management","root","");
-            System.out.println("Connected to the database successfully");
+            System.out.println("Connected to the database successfullyyy");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -26,6 +26,7 @@ public class UserDao {
     }
     public User getUser(String username  , String password) {
         User user = null;
+        System.out.println("aaaaaaaaaa");
         String sql = "select * from acces where username=? and password=?";
         try (PreparedStatement pes = connn.prepareStatement(sql)){
             pes.setString(1, username);
@@ -33,8 +34,9 @@ public class UserDao {
 
             try (ResultSet rs = pes.executeQuery()){
                 if (rs.next()){
+                    user = new User();
                     user.setId(rs.getInt("idAdmin"));
-                    user.setName(rs.getString("nomadmine"));
+                    user.setName(rs.getString("nomadmin"));
                     user.setPassword(rs.getString("password"));
                     user.setUsername(rs.getString("username"));
                     user.setRole(rs.getString("role"));

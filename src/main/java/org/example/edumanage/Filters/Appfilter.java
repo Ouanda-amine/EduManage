@@ -24,18 +24,24 @@ public class Appfilter implements Filter {
         HttpServletResponse httpresponse = (HttpServletResponse) servletResponse;
 
         String uri = httprequest.getRequestURI();
-        if (uri.endsWith("login")) {
+        HttpSession session = httprequest.getSession(false);
 
+
+        if (uri.endsWith("login")) {
+            if (session != null && session.getAttribute("user") != null) {
+                httpresponse.sendRedirect(httprequest.getContextPath() + "/StudentServlet");
+                return;
+            }
             filterChain.doFilter(servletRequest, servletResponse);
             return;
-
         }
 
-        if (httprequest.getSession().getAttribute("user") == null) {
+        if (session == null || session.getAttribute("user") == null) {
             httpresponse.sendRedirect(httprequest.getContextPath() + "/login");
             return;
         }
         filterChain.doFilter(servletRequest, servletResponse);
+
 
 
 
