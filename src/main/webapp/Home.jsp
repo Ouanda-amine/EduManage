@@ -12,7 +12,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#"> Edu-Management</a>
+    <a class="navbar-brand" href="#"> Edu-Management </a>
+    <form action="logout" > <button  class="btn btn-danger">logout</button> </form>
   </div>
 </nav>
 
